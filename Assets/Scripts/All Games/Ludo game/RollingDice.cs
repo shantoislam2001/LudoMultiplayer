@@ -349,6 +349,23 @@ public class RollingDice : MonoBehaviour
         
     }
 
+    IEnumerator MoveToPosition(Transform piece, Vector3 target, float duration)
+    {
+        Vector3 start = piece.position;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            piece.position = Vector3.Lerp(start, target, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        piece.position = target;
+    }
+
+
+
     IEnumerator moveStep(int movePlayer)
     {
         if (GameManager.gm.RollingDice == GameManager.gm.manageRollingDice[0])
@@ -382,18 +399,20 @@ public class RollingDice : MonoBehaviour
         GameManager.gm.transferDice = false;
         yield return new WaitForSeconds(0.25f);
         int numberOfStepToMove = GameManager.gm.numberOfStepsToMove;
-      
-        for (int i = outPlayerPice.numberOfStepToAlreadyMoved; i < (outPlayerPice.numberOfStepToAlreadyMoved + numberOfStepToMove); i++)
+       
+        int stepsToMove = GameManager.gm.numberOfStepsToMove;
+
+        for (int i = 1; i <= stepsToMove; i++)
         {
-            outPlayerPice.currentPathPoint.rescaleAndPostionAllPlayerPice();
-
-            if (isPathPointAbleableToMove(numberOfStepToMove, outPlayerPice.numberOfStepToAlreadyMoved, pathPointToMoveOn))
+            int nextIndex = outPlayerPice.numberOfStepToAlreadyMoved + i - 1;
+           
+            if (isPathPointAbleableToMove(stepsToMove, outPlayerPice.numberOfStepToAlreadyMoved, pathPointToMoveOn))
             {
-                outPlayerPice.transform.position = pathPointToMoveOn[i].transform.position;
-                yield return new WaitForSeconds(0.35f);
+                Vector3 nextPosition = pathPointToMoveOn[nextIndex].transform.position;
+                yield return StartCoroutine(MoveToPosition(outPlayerPice.transform, nextPosition, 0.3f));
             }
-
         }
+        outPlayerPice.currentPathPoint.rescaleAndPostionAllPlayerPice();
         if (isPathPointAbleableToMove(numberOfStepToMove, outPlayerPice.numberOfStepToAlreadyMoved, pathPointToMoveOn))
         {
 

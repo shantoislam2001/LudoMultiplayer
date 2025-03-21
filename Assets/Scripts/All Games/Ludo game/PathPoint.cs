@@ -71,8 +71,8 @@ public class PathPoint : MonoBehaviour
             for(int i = -extent; i <= extent; i++)
             {
                 playerPiceList[counter].transform.localScale = new Vector3(pathMain.scale[piceCount - 1], pathMain.scale[piceCount - 1], 1f);
-              //  playerPiceList[counter].transform.position = new Vector3(transform.position.x + (i * pathMain.positionDiffrence[piceCount - 1]), transform.position.y, 0f);
-                playerPiceList[counter].transform.position = new Vector3(transform.position.x, transform.position.y + (i * pathMain.positionDiffrence[piceCount - 1]), transform.position.z);
+                playerPiceList[counter].transform.position = new Vector3(transform.position.x + (i * pathMain.positionDiffrence[piceCount - 1]), transform.position.y, transform.position.z);
+                // playerPiceList[counter].transform.position = new Vector3(transform.position.x, transform.position.y + (i * pathMain.positionDiffrence[piceCount - 1]), transform.position.z);
                 counter++;
             }
         }else
@@ -80,8 +80,8 @@ public class PathPoint : MonoBehaviour
             for (int i = -extent; i < extent; i++)
             {
                 playerPiceList[counter].transform.localScale = new Vector3(pathMain.scale[piceCount - 1], pathMain.scale[piceCount - 1], 1f);
-              //  playerPiceList[counter].transform.position = new Vector3(transform.position.x + (i * pathMain.positionDiffrence[piceCount - 1]), transform.position.y, 0f);
-                playerPiceList[counter].transform.position = new Vector3(transform.position.x , transform.position.y + (i * pathMain.positionDiffrence[piceCount - 1]), transform.position.z);
+                  playerPiceList[counter].transform.position = new Vector3(transform.position.x + (i * pathMain.positionDiffrence[piceCount - 1]), transform.position.y,  transform.position.z);
+               // playerPiceList[counter].transform.position = new Vector3(transform.position.x , transform.position.y + (i * pathMain.positionDiffrence[piceCount - 1]), transform.position.z);
                 counter++;
             }
         }

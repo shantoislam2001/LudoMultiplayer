@@ -43,22 +43,42 @@ public class PlayerPice : MonoBehaviour
        movePlayerPice = StartCoroutine(moveStep(pathPointToMoveOn));
     }
 
+    IEnumerator MoveToPosition(Transform piece, Vector3 target, float duration)
+    {
+        Vector3 start = piece.position;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            piece.position = Vector3.Lerp(start, target, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        piece.position = target;
+    }
+
+
     IEnumerator moveStep(PathPoint[] pathPointToMoveOn)
     {
         GameManager.gm.transferDice = false;
         yield return new WaitForSeconds(0.25f);
         numberOfStepToMove = GameManager.gm.numberOfStepsToMove;
-        for (int i = numberOfStepToAlreadyMoved; i < numberOfStepToAlreadyMoved + numberOfStepToMove; i++)
+       
+        int stepsToMove = GameManager.gm.numberOfStepsToMove;
+
+        for (int i = 1; i <= stepsToMove; i++)
         {
-            currentPathPoint.rescaleAndPostionAllPlayerPice();
-           // previusPathPoint.rescaleAndPostionAllPlayerPice();
-            if(isPathPointAbleableToMove(numberOfStepToMove, numberOfStepToAlreadyMoved, pathPointToMoveOn))
+            int nextIndex = numberOfStepToAlreadyMoved + i - 1;
+           
+            if (isPathPointAbleableToMove(stepsToMove, numberOfStepToAlreadyMoved, pathPointToMoveOn))
             {
-                transform.position = pathPointToMoveOn[i].transform.position;
-                yield return new WaitForSeconds(0.35f);
+                Vector3 nextPosition = pathPointToMoveOn[nextIndex].transform.position;
+                yield return StartCoroutine(MoveToPosition(transform, nextPosition, 0.3f));
             }
-          
         }
+        currentPathPoint.rescaleAndPostionAllPlayerPice();
+
         if (isPathPointAbleableToMove(numberOfStepToMove, numberOfStepToAlreadyMoved, pathPointToMoveOn))
         {
           
