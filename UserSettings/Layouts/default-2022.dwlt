@@ -357,8 +357,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b25d0000
-      m_LastClickedID: 23986
+      m_SelectedIDs: d4530000
+      m_LastClickedID: 0
       m_ExpandedIDs: 2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1195,11 +1195,11 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts/All Games/Ludo game
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: D:\Unity projects\Ludo game 3D
+  m_LastProjectPath: D:\Unity projects\LudoMultiplayer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
+    scrollPos: {x: 0, y: 89.00003}
     m_SelectedIDs: 9e600000
     m_LastClickedID: 24734
     m_ExpandedIDs: 000000009a6000009c6000009e600000a0600000a2600000a4600000
