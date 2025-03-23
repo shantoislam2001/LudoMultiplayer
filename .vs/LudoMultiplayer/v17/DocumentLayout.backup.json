@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\Unity projects\\LudoMultiplayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|d:\\unity projects\\ludomultiplayer\\assets\\scripts\\all games\\ludo game\\player\\playerpice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|d:\\unity projects\\ludomultiplayer\\assets\\scripts\\firebase\\firestoreapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\firebase\\firestoreapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|D:\\Unity projects\\LudoMultiplayer\\assets\\scripts\\all games\\ludo game\\player\\playerpice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\all games\\ludo game\\player\\playerpice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -13,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|D:\\Unity projects\\LudoMultiplayer\\assets\\scripts\\all games\\ludo game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\all games\\ludo game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|D:\\Unity projects\\LudoMultiplayer\\assets\\scripts\\all games\\ludo game\\pathpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C6F032-EE6A-7FED-2718-0A7275908693}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\all games\\ludo game\\pathpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,38 +35,61 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FirestoreAPI.cs",
+              "DocumentMoniker": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\Firebase\\FirestoreAPI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Firebase\\FirestoreAPI.cs",
+              "ToolTip": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\Firebase\\FirestoreAPI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Firebase\\FirestoreAPI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T14:09:20.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PathPoint.cs",
+              "DocumentMoniker": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\All Games\\Ludo game\\PathPoint.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\All Games\\Ludo game\\PathPoint.cs",
+              "ToolTip": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\All Games\\Ludo game\\PathPoint.cs",
+              "RelativeToolTip": "Assets\\Scripts\\All Games\\Ludo game\\PathPoint.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowEIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T10:39:43.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PlayerPice.cs",
               "DocumentMoniker": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\All Games\\Ludo game\\Player\\PlayerPice.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\All Games\\Ludo game\\Player\\PlayerPice.cs",
               "ToolTip": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\All Games\\Ludo game\\Player\\PlayerPice.cs",
               "RelativeToolTip": "Assets\\Scripts\\All Games\\Ludo game\\Player\\PlayerPice.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAiwE8AAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAIAAAAAAAAAAAAA9wE8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T08:18:19.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T08:18:19.172Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "RollingDice.cs",
               "DocumentMoniker": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\All Games\\Ludo game\\RollingDice.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\All Games\\Ludo game\\RollingDice.cs",
               "ToolTip": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\All Games\\Ludo game\\RollingDice.cs",
               "RelativeToolTip": "Assets\\Scripts\\All Games\\Ludo game\\RollingDice.cs",
-              "ViewState": "AgIAAI4BAAAAAAAAAAAqwJ4BAABIAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAArwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T03:22:07.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T03:22:07.59Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\All Games\\Ludo game\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\All Games\\Ludo game\\GameManager.cs",
               "ToolTip": "D:\\Unity projects\\LudoMultiplayer\\Assets\\Scripts\\All Games\\Ludo game\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\All Games\\Ludo game\\GameManager.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAAABwAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAEwFcAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T03:15:34.004Z"
             }
