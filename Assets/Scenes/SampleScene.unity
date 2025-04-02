@@ -6368,7 +6368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -6715,6 +6715,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677d1d35bb5349d45995342d21c80fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1221738297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221738300}
+  - component: {fileID: 1221738299}
+  - component: {fileID: 1221738298}
+  m_Layer: 0
+  m_Name: Scripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1221738298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221738297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c1e8799cf55c649966662ebf00a31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realtimeAPI: {fileID: 1221738299}
+  ludoOnline: {fileID: 11400000, guid: fc7491829171a5541b2da89134a03f7b, type: 2}
+--- !u!114 &1221738299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221738297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890d1dd94d765c541ba096e05fc6d092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  databaseUrl: https://game-5f9d8-default-rtdb.asia-southeast1.firebasedatabase.app/
+  authToken: 
+--- !u!4 &1221738300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221738297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.2508054, y: -1.6002815, z: 3.6253848}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229676377
 GameObject:
   m_ObjectHideFlags: 0
@@ -7571,6 +7632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf19fb6c0f57b8b4e88aad493eb3f502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ludoOnline: {fileID: 11400000, guid: fc7491829171a5541b2da89134a03f7b, type: 2}
   numberOfStepsToMove: 0
   RollingDice: {fileID: 0}
   canPlayerMove: 1
@@ -13251,3 +13313,4 @@ SceneRoots:
   - {fileID: 1345000768}
   - {fileID: 1147298704}
   - {fileID: 1662158540}
+  - {fileID: 1221738300}

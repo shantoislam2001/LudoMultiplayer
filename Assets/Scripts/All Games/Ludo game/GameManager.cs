@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public LudoOnline ludoOnline;
     public static GameManager gm;
     public int numberOfStepsToMove;
     public RollingDice RollingDice;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     public PlayerPice[] yellowPlayerPice;
     public int totalPlayerCanPlay;
     public int totalSix = 0;
+    
 
 
     private void Awake()
@@ -188,6 +190,23 @@ public class GameManager : MonoBehaviour
 
 
         return i;
+    }
+
+    private void Update()
+    {
+        if(ludoOnline.test)
+        {
+            roled();
+            
+            ludoOnline.test = false;
+        }
+
+        if(ludoOnline.testClick)
+        {
+            ludoOnline.testClick = false;
+            grenPlayerPice[0].gameObject.GetComponent<GreenPlayer>().selfClick();
+        }
+
     }
 
 }

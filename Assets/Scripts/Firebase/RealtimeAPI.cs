@@ -5,10 +5,10 @@ using UnityEngine.Networking;
 using Newtonsoft.Json;
 using System.Text;
 
-public class FirebaseDatabase : MonoBehaviour
+public class RealtimeAPI : MonoBehaviour
 {
     [Header("Firebase Settings")]
-    public string databaseUrl = "https://your-app-id.firebaseio.com/";
+    public string databaseUrl = "https://game-5f9d8-default-rtdb.asia-southeast1.firebasedatabase.app/";
     public string authToken = ""; // Optional
 
     private string FormatUrl(string path, Dictionary<string, string> queryParams = null)

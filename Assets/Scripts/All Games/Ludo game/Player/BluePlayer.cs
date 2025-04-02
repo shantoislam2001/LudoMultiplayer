@@ -15,6 +15,7 @@ public class BluePlayer : PlayerPice
     {
         if (GameManager.gm.RollingDice != null)
         {
+            
             if (!isReady)
             {
                 if (GameManager.gm.RollingDice == blueRollingDice && GameManager.gm.numberOfStepsToMove == 6 )
@@ -31,6 +32,12 @@ public class BluePlayer : PlayerPice
             {
                 GameManager.gm.canPlayerMove = false;
                 moveSteps(pathMain.bluePath);
+            }
+
+            if(GameManager.gm.ludoOnline.multiplayerMode)
+            {
+                GameManager.gm.ludoOnline.bluePlayer.pice = gameObject.name;
+                Backend.self.sendBluePice();
             }
 
         }

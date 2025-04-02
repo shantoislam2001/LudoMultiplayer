@@ -34,6 +34,30 @@ public class GreenPlayer : PlayerPice
            
     }
 
+    public void selfClick()
+    {
+        if (GameManager.gm.RollingDice != null)
+        {
+            if (!isReady)
+            {
+                if (GameManager.gm.RollingDice == greenRollingDice && GameManager.gm.numberOfStepsToMove == 6)
+                {
+                    GameManager.gm.greenOutPlayer += 1;
+                    makePlayerReadyToMove(pathMain.greenPath);
+                    GameManager.gm.numberOfStepsToMove = 0;
+                    return;
+                }
+            }
+            if (GameManager.gm.RollingDice == greenRollingDice && isReady)
+            {
+                moveSteps(pathMain.greenPath);
+            }
+
+        }
+
+    }
+
+
     // Update is called once per frame
     void Update()
     {

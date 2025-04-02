@@ -59,7 +59,26 @@ public class RollingDice : MonoBehaviour
             {
                 maxNumber = 6;
             }
-            numberGot = Random.Range(0, maxNumber);
+            GameManager.gm.RollingDice = this;
+            if (GameManager.gm.ludoOnline.multiplayerMode && GameManager.gm.manageRollingDice[GameManager.gm.ludoOnline.selfColour] != GameManager.gm.RollingDice)
+            {
+                if (Backend.self.checkUpdate("green"))
+                {
+                    numberGot = 1;
+
+                }
+                else
+                {
+                    StartCoroutine(rolling());
+                }
+            }
+            else
+            {
+                numberGot = Random.Range(0, maxNumber);
+            }
+         
+
+
             if(numberGot == 6)
             {
                 GameManager.gm.totalSix++;
@@ -70,9 +89,12 @@ public class RollingDice : MonoBehaviour
             }
             SpriteRenderer.sprite = number[numberGot];
             numberGot += 1;
-            GameManager.gm.numberOfStepsToMove = numberGot;
-            GameManager.gm.RollingDice = this;
+           
 
+
+            GameManager.gm.numberOfStepsToMove = numberGot;
+           
+         
             SpriteRenderer.gameObject.SetActive(true);
             diceAanimation.gameObject.SetActive(false);
             yield return new WaitForEndOfFrame();
@@ -202,7 +224,7 @@ public class RollingDice : MonoBehaviour
                     
                 }
 
-
+                multiplayerControl();
             }
             GameManager.gm.rollingDiceManager();
 
@@ -305,11 +327,13 @@ public class RollingDice : MonoBehaviour
 
     public void makePlayerReadyToMove(int outPlayer)
     {
+
         if (GameManager.gm.RollingDice == GameManager.gm.manageRollingDice[0])
         {
             outPlayerPice = GameManager.gm.bluePlayerPice[outPlayer];
             pathPointToMoveOn = pathMain.bluePath;
             GameManager.gm.blueOutPlayer += 1;
+            GameManager.gm.ludoOnline.bluePlayer.pice = outPlayerPice.gameObject.name;
         }
         else
               if (GameManager.gm.RollingDice == GameManager.gm.manageRollingDice[1])
@@ -317,6 +341,7 @@ public class RollingDice : MonoBehaviour
             outPlayerPice = GameManager.gm.yellowPlayerPice[outPlayer];
             pathPointToMoveOn = pathMain.yellowPath;
             GameManager.gm.yellowOutPlayer += 1;
+            GameManager.gm.ludoOnline.yellowPlayer.pice = outPlayerPice.gameObject.name;
         }
         else
               if (GameManager.gm.RollingDice == GameManager.gm.manageRollingDice[2])
@@ -324,6 +349,7 @@ public class RollingDice : MonoBehaviour
             outPlayerPice = GameManager.gm.grenPlayerPice[outPlayer];
             pathPointToMoveOn = pathMain.greenPath;
             GameManager.gm.greenOutPlayer += 1;
+            GameManager.gm.ludoOnline.greenPlayer.pice = outPlayerPice.gameObject.name;
         }
         else
               if (GameManager.gm.RollingDice == GameManager.gm.manageRollingDice[3])
@@ -331,6 +357,7 @@ public class RollingDice : MonoBehaviour
             outPlayerPice = GameManager.gm.redPlayerPice[outPlayer];
             pathPointToMoveOn = pathMain.redPath;
             GameManager.gm.redOutPlayer += 1;
+            GameManager.gm.ludoOnline.redPlayer.pice = outPlayerPice.gameObject.name;
         }
 
 
@@ -372,28 +399,28 @@ public class RollingDice : MonoBehaviour
         {
             outPlayerPice = GameManager.gm.bluePlayerPice[movePlayer];
             pathPointToMoveOn = pathMain.bluePath;
-            
+            GameManager.gm.ludoOnline.bluePlayer.pice = outPlayerPice.gameObject.name;
         }
         else
             if (GameManager.gm.RollingDice == GameManager.gm.manageRollingDice[1])
         {
             outPlayerPice = GameManager.gm.yellowPlayerPice[movePlayer];
             pathPointToMoveOn = pathMain.yellowPath;
-            
+            GameManager.gm.ludoOnline.yellowPlayer.pice = outPlayerPice.gameObject.name;
         }
         else
             if (GameManager.gm.RollingDice == GameManager.gm.manageRollingDice[2])
         {
             outPlayerPice = GameManager.gm.grenPlayerPice[movePlayer];
             pathPointToMoveOn = pathMain.greenPath;
-            
+            GameManager.gm.ludoOnline.greenPlayer.pice = outPlayerPice.gameObject.name;
         }
         else
             if (GameManager.gm.RollingDice == GameManager.gm.manageRollingDice[3])
         {
             outPlayerPice = GameManager.gm.redPlayerPice[movePlayer];
             pathPointToMoveOn = pathMain.redPath;
-            
+            GameManager.gm.ludoOnline.redPlayer.pice = outPlayerPice.gameObject.name;
         }
 
         GameManager.gm.transferDice = false;
@@ -499,6 +526,32 @@ public class RollingDice : MonoBehaviour
             }
         }
         return -1;
+    }
+
+    public void multiplayerControl()
+    {
+        if (!GameManager.gm.ludoOnline.multiplayerMode) return;
+        if(GameManager.gm.ludoOnline.selfColour == 0)
+        {
+            GameManager.gm.ludoOnline.bluePlayer.dice = GameManager.gm.numberOfStepsToMove;
+            Backend.self.sendBlueDice();
+        }
+        else if (GameManager.gm.ludoOnline.selfColour == 1)
+        {
+            GameManager.gm.ludoOnline.yellowPlayer.dice = GameManager.gm.numberOfStepsToMove;
+        }
+        else if (GameManager.gm.ludoOnline.selfColour == 2)
+        {
+            GameManager.gm.ludoOnline.greenPlayer.dice = GameManager.gm.numberOfStepsToMove;
+        }
+        else if (GameManager.gm.ludoOnline.selfColour == 3)
+        {
+            GameManager.gm.ludoOnline.redPlayer.dice = GameManager.gm.numberOfStepsToMove;
+        }
+
+
+
+
     }
 
 }
