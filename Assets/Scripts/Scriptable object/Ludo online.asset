@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ae58d0f4043f84f8191e8e95a99985, type: 3}
   m_Name: Ludo online
   m_EditorClassIdentifier: 
-  multiplayerMode: 1
+  multiplayerMode: 0
   test: 0
   testClick: 0
   selfColour: 0
@@ -20,7 +20,7 @@ MonoBehaviour:
     currentRoom: 
     colour: 0
     pice: BluePlayer
-    dice: 5
+    dice: 0
     clicked: 0
   redPlayer:
     currentRoom: 

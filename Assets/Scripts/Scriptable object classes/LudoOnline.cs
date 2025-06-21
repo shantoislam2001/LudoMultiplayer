@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting.ReorderableList;
+
 
 [CreateAssetMenu(fileName = "Ludo online", menuName = "ScriptableObjects/Ludo online", order = 1)]
 public class LudoOnline : ScriptableObject
